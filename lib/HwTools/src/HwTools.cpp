@@ -154,7 +154,7 @@ void HwTools::setup(SystemConfig* sys, GpioConfig* config) {
         delete sensorApi;
     if(oneWire != NULL)
         delete oneWire;
-    if(config->tempSensorPin > 0 && config->tempSensorPin < 40) {
+    if(config->tempSensorPin >= 0 && config->tempSensorPin < 40) {
         pinMode(config->tempSensorPin, INPUT);
         tempPin = config->tempSensorPin;
     } else {
